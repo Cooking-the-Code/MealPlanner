@@ -18,7 +18,8 @@ passport.use(
         if (!user) {
           return done(null, false);
         }
-        return user;
+        //if we have user then we validate the password using the comparePassword Method from the user schema.
+        User.comparePassword(password, done);
       }
     );
   })

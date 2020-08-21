@@ -69,7 +69,6 @@
       "EC2",
       "FARGATE"
     ],
- 
     "family": "first-run-task-definition",
     "requiresAttributes": [
       {

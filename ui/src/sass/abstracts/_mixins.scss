@@ -1,0 +1,50 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+//MEDIA QUERY MANAGER
+/* 
+0 - 600px;      xs - Phone (max-width media query)
+600 - 900px;    sm - Tablet portrait (max-width media query)
+900 - 1200px;   md - Tablet landscape (max-width media query)
+1200 - 1800px;  lg - Laptop = this is where our normal style applies
+1800px + ;      xl - Big Desktop (min-width media query)
+
+$breakpoint argument choices:
+- xs
+- sm
+- md
+- xl
+
+ORDER:
+base + typography > general layout + grid > page layout > components
+
+use em as unit for size, not rem as rem is does not covert properly in all browsers
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == xs {
+        @media only screen and (max-width: 37.5em) { @content }; //600px
+    }
+    @if $breakpoint == sm {
+        @media only screen and (max-width: 56.25em) { @content }; //900px
+    }
+    @if $breakpoint == md {
+        @media only screen and (max-width: 75em) { @content }; //1200px
+    }
+    @if $breakpoint == xl {
+        @media only screen and (min-width: 112.5em) { @content }; //1800px
+    }
+}

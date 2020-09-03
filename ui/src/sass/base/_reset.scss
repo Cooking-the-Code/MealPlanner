@@ -1,0 +1,20 @@
+//global reset
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px, 10px/16px(browser default) = 62.5%
+
+    @media only screen and (max-width: var(--bp-lg)) {
+        font-size: 50%;
+    }
+}

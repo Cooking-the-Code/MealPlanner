@@ -1,0 +1,77 @@
+//examples
+:root {
+//COLORS
+    --color-primary: #e00543;
+    --color-primary-light: #fdf1db;
+    --color-primary-dark: #84253e;
+
+    --color-secondary-light: #a6cd12;
+    --color-secondary-dark: #647d0c;
+
+    --color-tertiary-light: #2998ff;
+    --color-tertiary-dark: #5643fa;
+
+    --color-grey-dark: #777;
+    --color-grey-dark-2: #999;
+    --color-grey-dark-3: #333;
+
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+
+    --color-white: #fff;
+    --color-black: #000;
+
+//FONT SIZE
+    --font-size-default: 1.6rem;
+    --font-size-sm: 2rem;
+    --font-size-md: 5rem;
+    --font-size-lg: 8rem;
+
+//FONT-WEIGHT
+    --font-weight-default: 400;
+
+//GRID
+    --grid-width: 114rem;
+    --gutter-vertical-sm: 6rem;
+    --gutter-vertical-md: 8rem;
+    --gutter-vertical-lg: 10rem;
+    --gutter-horizontal: 6rem;
+
+//HEIGHT
+    --height-0: 0;
+    --height-sm: 4rem;
+    --height-md: 6.5rem;
+    --height-lg: 10rem;
+    --height-xl: 15rem;
+    --height-xxl: 35rem;
+
+//LINES
+    --line: .1rem solid var(--color-grey-light-2);
+
+//LINE-HEIGHT
+    --line-height-default: 1.7;
+
+//PADDING
+    --padding-0: 0;
+    --padding-xxs: 1rem;
+    --padding-xs: 1.5rem;
+    --padding-sm: 3rem;
+    --padding-md: 5rem;
+    --padding-lg: 6rem;
+
+//RESPONSIVE BREAKPOINTS
+    --bp-xl: 112.5em; //1800px
+    --bp-md: 75em; //1200px
+    --bp-sm: 56.25em; //900px
+    --bp-xs: 37.5em; //600px
+
+//SHADOWS
+    --shadow-ligh: 0 2rem 5rem rgba(5, 3, 3, 0.06);
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+
+//WIDTH
+    --width-sm: 15rem;
+    --width-md: 25rem;
+    --width-lg: 30rem;
+
+}

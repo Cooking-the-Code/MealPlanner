@@ -1,0 +1,29 @@
+// {
+//     "AWSEBDockerrunVersion": 2,
+//     "containerDefinations": [
+//         {
+//             "name": "ui",
+//             "image": "",
+//             "hostname": "ui",
+//             "essential": false
+//         },
+//         {
+//             "name": "api",
+//             "image": "",
+//             "hostname": "api",
+//             "essential": false
+//         },
+//         {
+//             "name": "nginx",
+//             "image": "", 
+//             "essential": true,
+//             "portMappings": [
+//                 {
+//                     "hostPort": 80,
+//                     "containerPort": 80
+//                 }
+//             ],
+//             "links": ["ui", "server"]
+//         }
+//     ]
+// }

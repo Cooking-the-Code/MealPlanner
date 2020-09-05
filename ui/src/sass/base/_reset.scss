@@ -14,7 +14,7 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; //1rem = 10px, 10px/16px(browser default) = 62.5%
 
-    @media only screen and (max-width: var(--bp-lg)) {
+    @media only screen and (max-width: $bp-md) {
         font-size: 50%;
     }
 }

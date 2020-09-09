@@ -45,7 +45,7 @@ class Login extends Component {
 						onChange={this.handleChange}
 					/>
 					<label htmlFor='password'>Password</label>
-					<button type='submit'>Sign In</button>
+					<button type='submit'>Login</button>
 					{this.state.submit && (
 						<p className={this.state.value ? 'valid' : 'invalid'}>
 							{this.state.valid ? 'password matched' : 'password do not match'}

@@ -3,6 +3,7 @@ import logo from './assets/greenMealPlanIcon.svg';
 import axios from 'axios';
 import './css/App.scss';
 import Login from './components/Login';
+import Signup from './components/Signup';
 
 const apiUrl = `http://localhost:8080`;
 
@@ -41,6 +42,7 @@ class App extends Component {
           </ul>
         </header>
         <Login />
+        
       </div>
     );
   }

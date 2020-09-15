@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './assets/greenMealPlanIcon.svg';
 import axios from 'axios';
-import './App.css';
+import './css/App.scss';
 
 const apiUrl = `http://localhost:8080`;
 

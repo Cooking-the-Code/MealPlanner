@@ -1,0 +1,32 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinations": [
+        {
+            "name": "ui",
+            "image": "",
+            "hostname": "ui",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "api",
+            "image": "",
+            "hostname": "api",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "", 
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["ui", "server"],
+            "memory": 128
+        }
+    ]
+}

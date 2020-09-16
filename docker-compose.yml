@@ -1,18 +1,36 @@
-version: '2'
+version: '3'
 services:
   ui:
-    build: ./ui
-    ports:
-      - '80:80'
-    depends_on:
-      - api
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ui
+    volumes: 
+      - /app/node_modules
+      - ./ui:/app
+    stdin_open: true
   api:
-    build: ./api
-    ports:
-      - '8080:8080'
+    build: 
+      # file name to use
+      dockerfile: Dockerfile.dev
+      # which directory to find the above file in
+      context: ./api
+    volumes: 
+      - /app/node_modules
+      # copies all of the server direct except the node_modules to the app folder
+      - ./api:/app
     depends_on:
       - mongo
   mongo:
     image: mongo
     ports:
       - '27017:27017'
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+    depends_on: 
+      - api
+      - ui

@@ -4,7 +4,7 @@ import axios from 'axios';
 import './css/App.scss';
 import Login from './components/Login';
 
-const apiUrl = `http://localhost:8080`;
+const apiUrl = `api`;   // `http://localhost:8080`;
 
 class App extends Component {
   state = {

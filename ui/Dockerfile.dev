@@ -10,14 +10,4 @@ RUN npm install --silent
 #TODO maybe remove?
 # RUN npm install react-scripts@3.3.0 -g --silent
 COPY . .
-RUN npm run build
-
-# production environment
-FROM nginx:1.16.0-alpine
-
-EXPOSE 80
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=0 /app/build /usr/share/nginx/html
-
-#TODO maybe remove?
-# CMD ["nginx", "-g", "daemon off;"]
+CMD [ "npm", "run", "start" ]

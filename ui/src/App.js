@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from './assets/greenMealPlanIcon.svg';
 import axios from 'axios';
 import './css/App.scss';
+import Login from './components/Login';
 
-const apiUrl = `http://localhost:8080`;
+const apiUrl = `http://localhost:8080`; //`api`; 
 
 class App extends Component {
   state = {
@@ -39,6 +40,7 @@ class App extends Component {
             ))}
           </ul>
         </header>
+        <Login />        
       </div>
     );
   }

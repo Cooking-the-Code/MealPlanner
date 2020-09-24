@@ -10,18 +10,17 @@ class Landing extends Component {
 
 
 
-render() {
-	return (
-        <div>
-            <Hero />
-            <How />
-            <Testimonial />
-            <CTA />
-            <LandingFooter />
-        </div>
-
-		);
-	}
+    render() { 
+        return (
+            <div style={{border:'5px solid black'}}>
+                <Hero />
+                <How />
+                <Testimonial />
+                <CTA />
+                <LandingFooter />
+            </div>
+        );
+    }
 }
 
 export default Landing;

@@ -9,8 +9,8 @@ class CTA extends Component {
 
         return (
             <div>
-                <Container>
-                    <Typography component="div" style={{backgroundColor: 'Blue', height: '70vh', margin: 'auto'}}>
+                <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid red'}}>
+                    <Typography component="div" style={{backgroundColor: '#127681', height: '70vh', margin: 'auto'}}>
                         <Typography variant="h3"  style={{textAlign: 'center', margin: 'auto'}}>
                             Chitty Bang Bang, Chitty Chitty Bang Bang
                             We love you and in

@@ -8,8 +8,8 @@ class Testimonial extends Component {
     render() {
         return (
             <div>
-               <Container >
-                <Typography component="div" style={{backgroundColor: 'black', height: '35vh'}}>
+               <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid yellowgreen'}}>
+                <Typography component="div" style={{backgroundColor: '#21174a', height: '35vh'}}>
 
                 </Typography>
                </Container> 

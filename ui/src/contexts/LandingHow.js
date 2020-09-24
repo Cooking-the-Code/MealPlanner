@@ -8,8 +8,8 @@ class How extends Component {
     render() {
         return (
             <div>
-              <Container >
-                <Typography component="div" style={{backgroundColor: 'purple', height: '70vh'}}>
+              <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid yellow'}}>
+                <Typography component="div" style={{backgroundColor: '#df0e62', height: '70vh'}}>
 
                 </Typography>
                </Container> 

@@ -8,8 +8,8 @@ class LandingFooter extends Component {
     render() {
         return (
             <div>
-                <Container >
-                <Typography component="div" style={{backgroundColor: 'yellowgreen', height: '30vh'}}>
+                <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid white'}}>
+                <Typography component="div" style={{backgroundColor: '#fac70b', height: '30vh'}}>
 
                 </Typography>
                </Container> 

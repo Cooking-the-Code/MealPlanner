@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Container, Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 export default function CTA() {
     // path for sign up page

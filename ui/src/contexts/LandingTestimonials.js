@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Typography } from '@material-ui/core';
 
-class Testimonial extends Component {
-
-
-
-    render() {
+export default function Testimonial() {
         return (
             <div>
                <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid yellowgreen'}}>
@@ -17,7 +13,4 @@ class Testimonial extends Component {
     
             );
         }
-    }
-    
-    export default Testimonial;
     

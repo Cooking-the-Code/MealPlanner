@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Typography } from '@material-ui/core';
 
-class LandingFooter extends Component {
+export default function LandingFooter() {
 
-
-
-    render() {
         return (
             <div>
                 <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid white'}}>
@@ -17,7 +14,6 @@ class LandingFooter extends Component {
     
             );
         }
-    }
     
-    export default LandingFooter;
+
     

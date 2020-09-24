@@ -16,14 +16,19 @@ const useStyles = makeStyles((theme) => ({
     typography: {
         textAlign: 'center',
         padding: '6rem',
-        fontSize: '2.5rem'
+        fontSize: '2.5rem',
+        zIndex: 1,
     },
   }));
 
   const styles = {
+      //starting styling to add an image behind the Power Statements & CTA on the landing page
     paperContainer: {
-        backgroundImage: `url(${familyTable})`,
-        opacity: 0.5,
+        image: {
+            // backgroundImage: `url(${familyTable})`,
+            // opacity: 0.5,
+        }
+        
         
     }
   };
@@ -33,7 +38,9 @@ export default function Hero() {
     
 
         return (
+            // Container for Landing Section
             <Container maxWidth='false' style={{height: '100vh', margin:'0', padding: '0'}}>
+                {/* Navbar */}
                     <AppBar position='static' style={{backgroundColor: '#df0e62' }}>
                         <Toolbar >
                             <Grid container justify='space-between' alignItems='center'>
@@ -44,7 +51,10 @@ export default function Hero() {
                             </Grid>
                         </Toolbar>
                     </AppBar>
-                    <Paper style={styles.paperContainer}>
+
+                {/* starting styling to add an image behind the Power Statements & CTA on the landing page  */}
+                    {/* <Paper style={styles.paperContainer.image}> */}
+                    {/* Grid Container for Power Statements & CTA Button */}
                         <Grid container direction='column' spacing={0} alignItems='center' justify='space-evenly'>
                             <Grid item xs={12}>
                                 <Typography  
@@ -66,8 +76,7 @@ export default function Hero() {
                                 <Button color='primary' variant='contained' style={{background: '#fac70b', color: '#21174a', fontSize: '1.6rem'}}>Join Now</Button>
                             </Grid>
                         </Grid>  
-                    </Paper>
-                    
+                    {/* </Paper> */}    
             </Container> 
         );
     }

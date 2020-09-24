@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Typography } from '@material-ui/core';
 
-class How extends Component {
+export default function How() {
 
 
 
-    render() {
         return (
             <div>
               <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid yellow'}}>
@@ -17,6 +16,4 @@ class How extends Component {
     
             );
         }
-    }
-    
-    export default How;    
+       

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { AppBar, Button, Container, Grid, Paper, Toolbar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../assets/greenMealPlanIcon.svg';
@@ -28,15 +28,12 @@ const useStyles = makeStyles((theme) => ({
             // backgroundImage: `url(${familyTable})`,
             // opacity: 0.5,
         }
-        
-        
     }
   };
 
 export default function Hero() {
     const classes = useStyles();
     
-
         return (
             // Container for Landing Section
             <Container maxWidth='false' style={{height: '100vh', margin:'0', padding: '0'}}>

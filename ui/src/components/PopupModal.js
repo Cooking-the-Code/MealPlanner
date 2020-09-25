@@ -8,6 +8,14 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import { makeStyles } from "@material-ui/core/styles";
+import Login from "./Login";
 
 const styles = (theme) => ({
   root: {
@@ -53,6 +61,29 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "70vh",
+    width: "70vw",
+  },
+  image: {
+    backgroundImage: "url(https://source.unsplash.com/random)",
+    backgroundRepeat: "no-repeat",
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  },
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+}));
+
 export default function PopupModal() {
   const [open, setOpen] = React.useState(false);
 
@@ -62,6 +93,8 @@ export default function PopupModal() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const classes = useStyles();
 
   return (
     <div>
@@ -73,33 +106,38 @@ export default function PopupModal() {
         Sign In / Sign Up
       </Button>
       <Dialog
+        fullWidth={true}
+        maxWidth={"md"} // 'sm' || 'md' || 'lg' || 'xl'
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+        <DialogTitle
+          id="customized-dialog-title"
+          onClose={handleClose}
+        ></DialogTitle>
+        <DialogContent>
+          <Grid container component="main" className={classes.root}>
+            <CssBaseline />
+            <Grid item xs={false} sm={4} md={7} className={classes.image} />
+            <Grid
+              item
+              xs={12}
+              sm={8}
+              md={5}
+              component={Paper}
+              elevation={6}
+              square
+            >
+              <div className={classes.paper}>
+                <Login />
+              </div>
+            </Grid>
+          </Grid>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
+            Cancel
           </Button>
         </DialogActions>
       </Dialog>

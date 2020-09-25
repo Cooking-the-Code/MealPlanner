@@ -64,7 +64,6 @@ const DialogActions = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "70vh",
-    width: "70vw",
   },
   image: {
     backgroundImage: "url(https://source.unsplash.com/random)",
@@ -120,18 +119,8 @@ export default function PopupModal() {
           <Grid container component="main" className={classes.root}>
             <CssBaseline />
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
-            <Grid
-              item
-              xs={12}
-              sm={8}
-              md={5}
-              component={Paper}
-              elevation={6}
-              square
-            >
-              <div className={classes.paper}>
-                <Login />
-              </div>
+            <Grid item xs={12} sm={8} md={5} elevation={6} square>
+              <Login />
             </Grid>
           </Grid>
         </DialogContent>

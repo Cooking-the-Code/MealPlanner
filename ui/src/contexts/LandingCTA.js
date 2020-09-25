@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Typography } from '@material-ui/core';
+import { Button, Container, Typography } from '@material-ui/core';
 
 export default function CTA() {
     // path for sign up page
@@ -25,7 +25,8 @@ export default function CTA() {
                             marginLeft: '20vh', marginRight: '20vh',
                             border:'5px solid red'}}>
                         Click on the CTA!
-                        <Link to={signUpPath}> Sign up now! </Link>
+                        <br />
+                        <Button color='primary' variant='contained' style={{background: '#fac70b', color: '#21174a', fontSize: '1.6rem'}}>Join Now</Button>
                     </Typography>
                 </Typography>   
             </Container>

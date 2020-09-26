@@ -3,7 +3,7 @@ import axios from 'axios';
 import './css/App.scss';
 import Landing from './pages/Landing';
 
-const apiUrl = `http://localhost:8080`; //`api`; 
+const apiUrl = `api`; // `http://localhost:8080`; // 
 
 class App extends Component {
   state = {

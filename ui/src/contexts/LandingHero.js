@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppBar, Button, Container, Grid, Paper, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, Container, Grid, Toolbar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../assets/greenMealPlanIcon.svg';
-import familyTable from '../assets/familyTable.jpg';
+// TODO! Do we need?      import familyTable from '../assets/familyTable.jpg';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+  /*  TODO! Saving for later?
   const styles = {
       //starting styling to add an image behind the Power Statements & CTA on the landing page
     paperContainer: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
         }
     }
   };
+  */
 
 export default function Hero() {
     const classes = useStyles();

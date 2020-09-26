@@ -18,6 +18,8 @@ services:
       - /app/node_modules
       # copies all of the server direct except the node_modules to the app folder
       - ./api:/app
+    ports:
+      - '5000:5000'
     depends_on:
       - mongo
   mongo:

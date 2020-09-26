@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button, Container, Typography } from '@material-ui/core';
 
 export default function CTA() {
     // path for sign up page
-    const signUpPath = '/landing';
+    // const signUpPath = '/landing';
 
     // I would love to reduce the padding on the top and bottom of these elements but margin-left is not recognized. 
     return (

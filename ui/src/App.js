@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './assets/greenMealPlanIcon.svg';
 import axios from 'axios';
 import './css/App.scss';
-import Login from './components/Login';
+import Landing from './pages/Landing';
 
-const apiUrl = `http://localhost:8080`; //`api`; 
+const apiUrl = `api`; // `http://localhost:8080`; // 
 
 class App extends Component {
   state = {
@@ -30,17 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <button onClick={() => this.createUser()}>Create User</button>
-          <p>Users list:</p>
-          <ul>
-            {this.state.users.map(user => (
-              <li key={user._id}>id: {user._id}</li>
-            ))}
-          </ul>
-        </header>
-        <Login />        
+        <Landing />
       </div>
     );
   }

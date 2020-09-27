@@ -3,10 +3,23 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     line-height: 1.6;
-    background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+    background-image: #fdf1db;
+    // linear-gradient(to right bottom, $color-primary, $color-primary-dark);
     background-size: cover;
     background-repeat: no-repeat;
     color: $color-primary-light;
 
     min-height: 100vh;
+    min-width: 100vh;
 }
+
+// .powerText {
+//     padding: 5rem;
+//     color: #127681;
+//     font-size: 4rem;
+//     position: absolute;
+//         top: 25%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     border: '5px solid teal'
+// }

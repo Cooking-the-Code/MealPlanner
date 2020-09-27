@@ -4,8 +4,12 @@ const connectDb = require("./src/connection");
 const User = require("./src/User.model");
 const cors = require("cors");
 
-const PORT = 5000; // 8080;
+const PORT = 5000;
 app.use(cors());
+
+app.get("/", async (req, res) => {
+  res.send("Welcome to the Kitchen \n");
+});
 
 app.get("/users", async (req, res) => {
   const users = await User.find();

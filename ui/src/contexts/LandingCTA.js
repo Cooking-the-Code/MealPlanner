@@ -8,7 +8,7 @@ export default function CTA() {
     // I would love to reduce the padding on the top and bottom of these elements but margin-left is not recognized. 
     return (
         <div display="flex">
-            <Container maxWidth='false' style={{margin:"0", padding: "0"}}>
+            <Container maxWidth={false} style={{margin:"0", padding: "0"}}>
                 <Typography component="div" style={{backgroundColor: '#127681', height: 'auto', margin: 'auto', border:'5px solid yellow'}}>
                     <Typography variant="h3"  style={{
                             textAlign: 'center', margin: '10vh', 

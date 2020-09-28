@@ -17,22 +17,6 @@ router.post('/signup', async (req,res, next) =>{
 	}
 })
 
-// router.post('/signup', async (req, res) => {
-// 	var newUser = new User({
-// 		username: req.body.name,
-// 		email: req.body.name,
-// 		password: req.body.password,
-// 	});
-// 	await newUser
-// 		.save()
-// 		.then(() => {
-// 			res.status(200).send(newUser);
-// 		})
-// 		.catch((err) => {
-// 			console.log('Error is ', err.message);
-// 		});
-// });
-
 
 router.post('/login', (req, res) => {
 	res.send('Succesfully logged in');

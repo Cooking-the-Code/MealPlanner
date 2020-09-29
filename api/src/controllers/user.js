@@ -7,11 +7,11 @@ const User = require('../User.model.js');
 
 router.post('/signup', async (req, res, next) => {
 	try {
-		console.log('req.body:', req.body);
+		// console.log('req.body:', req.body);
 		const password = await bcrypt.hash(req.body.password, 10);
 		const user = await User.create({
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
 			email: req.body.email,
 			password,
 		});
@@ -21,6 +21,12 @@ router.post('/signup', async (req, res, next) => {
 	}
 });
 
+router.post('/signin', (req, res, next) => {
+	User.findOne({ email: req.body.email })
+		.then((user) => createUserToken(req, user))
+		.then((token) => res.json({ token }))
+		.catch(next);
+});
 
 
 

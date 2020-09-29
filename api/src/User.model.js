@@ -21,7 +21,11 @@ const userSchema = new mongoose.Schema({
 	password: {
 		type: String,
 		require: true,
-	},
+  },
+  validated: {
+    type: Boolean,
+    default: false
+  }
 	recipes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'recipe' }],
 });
 

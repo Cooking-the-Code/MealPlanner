@@ -15,7 +15,7 @@ const opts = {
 };
 
 // Require the user model
-const User = require('../models/User');
+const User = require('../User.model');
 
 const strategy = new Strategy(opts, function (jwt_payload, done) {
 	User.findById(jwt_payload.id)

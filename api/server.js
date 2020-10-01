@@ -22,7 +22,6 @@ app.use(express.json());
 app.use('/api/user', authRoutes);
 
 
-
 app.get("/", async (req, res) => {
   res.send("Welcome to the Kitchen \n");
 });

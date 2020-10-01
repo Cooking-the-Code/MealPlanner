@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { createUserToken } = require('../middleware/auth');
 const { requireToken } = require('../middleware/auth');
+const { sendEmail } = require('../middleware/validateEmail');
 const User = require('../User.model.js');
 
 router.post('/signup', async (req, res, next) => {
@@ -10,12 +11,14 @@ router.post('/signup', async (req, res, next) => {
 		// console.log('req.body:', req.body);
 		const password = await bcrypt.hash(req.body.password, 10);
 		const user = await User.create({
+			username:req.body.username,
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			email: req.body.email,
 			password,
 		});
-		res.status(201).json(user);
+		sendEmail(user.email, user.username);
+		// res.status(201).json(user);
 	} catch (error) {
 		return next(error);
 	}

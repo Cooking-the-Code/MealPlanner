@@ -5,7 +5,7 @@ require('dotenv').config();
 
 // Create a secret to be used to encrypt/decrypt the token
 
-const secret = process.env.JWT_SECRET;
+const secret = 'supersecret';
 
 const { Strategy, ExtractJwt } = require('passport-jwt');
 

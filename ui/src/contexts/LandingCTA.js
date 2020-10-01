@@ -1,11 +1,8 @@
 import React from 'react';
-import { Button, Container, Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import CTAButton from '../components/CTAButton';
 
 export default function CTA() {
-    // path for sign up page
-    // const signUpPath = '/landing';
-
     // I would love to reduce the padding on the top and bottom of these elements but margin-left is not recognized. 
     return (
         <div display="flex">
@@ -17,8 +14,7 @@ export default function CTA() {
                         variant="h3"  
                         style={{
                             textAlign: 'center', margin: '10vh', 
-                            marginLeft: '20vh', marginRight: '20vh',
-                            border:'5px solid red'}}>
+                            marginLeft: '20vh', marginRight: '20vh'}}>
                         Chitty Bang Bang, Chitty Chitty Bang Bang
                         We love you and in
                         Chitty Chitty Bang Bang, Chitty Chitty Bang Bang

@@ -18,7 +18,23 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function H1Text() {
+function H1Text() {
+    const classes = useStyles();
+
+    return (
+        <Grid item xs={12}>
+        <Typography 
+            variant="h2" 
+            component="h2"
+            className={classes.typography} 
+            style={{color: '#df0e62'}}  >
+            Sub Power statement
+        </Typography>
+    </Grid> 
+    )
+}
+
+function H2Text() {
     const classes = useStyles();
 
     return (
@@ -27,29 +43,28 @@ export default function H1Text() {
             variant="h1" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#df0e62'}}  >
-            Power statement
+            style={{color: '#127681'}}  >
+            Main Power statement
         </Typography>
     </Grid> 
     )
 }
 
-{/* <Grid item xs={12}>
-                                <Typography  
-                                    variant="h1" 
-                                    component="h2"
-                                    className={classes.typography} 
-                                    style={{color: '#127681'}} >
-                                    Power statement
-                                </Typography>
-                            </Grid>  */}
+function H3Text() {
+    const classes = useStyles();
 
-                            // <Grid item xs={12}>
-                            //     <Typography 
-                            //         variant="h1" 
-                            //         component="h2"
-                            //         className={classes.typography} 
-                            //         style={{color: '#21174a'}} >
-                            //         Power statement
-                            //     </Typography>
-                            // </Grid>
+    return (
+        <Grid item xs={12}>
+        <Typography 
+            variant="h2" 
+            component="h2"
+            className={classes.typography} 
+            style={{color: '#21174a'}}  >
+            Sub Power statement
+        </Typography>
+    </Grid> 
+    )
+}
+
+export { H1Text, H2Text, H3Text };
+

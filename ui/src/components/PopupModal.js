@@ -12,7 +12,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import PopupForm from "./PopupForm";
-import OauthMenu from "./OauthMenu";
+// import OauthMenu from "./OauthMenu";
 import Divider from "@material-ui/core/Divider";
 
 const styles = (theme) => ({
@@ -51,13 +51,6 @@ const DialogContent = withStyles((theme) => ({
     padding: theme.spacing(1),
   },
 }))(MuiDialogContent);
-
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -116,15 +109,10 @@ export default function PopupModal() {
               <br />
               <Divider variant="middle" />
               <br />
-              <OauthMenu />
+              {/* <OauthMenu /> */}
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );

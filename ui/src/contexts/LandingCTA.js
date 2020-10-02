@@ -25,8 +25,7 @@ export default function CTA() {
                         align="center" 
                         style={{
                             textAlign: 'center', margin: '10vh', 
-                            marginLeft: '20vh', marginRight: '20vh', 
-                            border:'5px solid red'}}>
+                            marginLeft: '20vh', marginRight: '20vh'}}>
                         Click on the CTA!
                         <br />
                         <CTAButton />

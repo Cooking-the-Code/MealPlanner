@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'space-evenly',
       zIndex: 1,
-    //   position: 'absolute',
+      position: 'absolute',
     },
     typography: {
         textAlign: 'center',
@@ -71,6 +71,8 @@ function H3Text() {
     </Grid> 
     )
 }
+
+
 
 export { H1Text, H2Text, H3Text };
 

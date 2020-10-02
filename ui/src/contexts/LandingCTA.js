@@ -9,12 +9,12 @@ export default function CTA() {
             <Container maxWidth={false} style={{margin:"0", padding: "0"}}>
                 <Typography 
                     component="div" 
-                    style={{backgroundColor: '#127681', height: 'auto', margin: 'auto', border:'5px solid yellow'}}>
+                    style={{height: 'auto', margin: 'auto'}}>
                     <Typography 
                         variant="h3"  
                         style={{
-                            textAlign: 'center', margin: '10vh', 
-                            marginLeft: '20vh', marginRight: '20vh'}}>
+                            color: '#21174a', atextAlign: 'center', margin: '10vh', 
+                            marginLeft: '20vh', marginRight: '20vh', fontFamily: 'Open Sans'}}>
                         Chitty Bang Bang, Chitty Chitty Bang Bang
                         We love you and in
                         Chitty Chitty Bang Bang, Chitty Chitty Bang Bang
@@ -24,10 +24,8 @@ export default function CTA() {
                         variant="h4" 
                         align="center" 
                         style={{
-                            textAlign: 'center', margin: '10vh', 
+                            color: '#21174a', textAlign: 'center', margin: '10vh', 
                             marginLeft: '20vh', marginRight: '20vh'}}>
-                        Click on the CTA!
-                        <br />
                         <CTAButton />
                     </Typography>
                 </Typography>   

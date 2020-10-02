@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <div className='navbar'>
-            <AppBar position='static' style={{backgroundColor: '#df0e62' }}>
+            <AppBar position='static' style={{backgroundColor: '#127681' }}>
                 <Toolbar >
                     <Grid container justify='space-between' alignItems='center'>
                         <img src={logo} className='App-logo' alt='awesome-cool-logo' />

@@ -10,11 +10,17 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'space-evenly',
       zIndex: 1,
+    //   position: 'absolute',
     },
     typography: {
         textAlign: 'center',
         padding: '6rem',
         zIndex: 1,
+        fontFamily: [
+            'Dancing Script',
+            'Open Sans'
+        ],
+        fontWeight: '600'
     },
   }));
 
@@ -27,7 +33,7 @@ function H1Text() {
             variant="h2" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#df0e62'}}  >
+            style={{color: '#df0e62', fontFamily: 'Open Sans'}}  >
             Sub Power statement
         </Typography>
     </Grid> 
@@ -43,8 +49,8 @@ function H2Text() {
             variant="h1" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#127681'}}  >
-            Main Power statement
+            style={{color: '#21174a', fontSize: '10rem'}}  >
+            Come to the Table
         </Typography>
     </Grid> 
     )
@@ -59,7 +65,7 @@ function H3Text() {
             variant="h2" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#21174a'}}  >
+            style={{color: '#df0e62', fontFamily: 'Open Sans'}}  >
             Sub Power statement
         </Typography>
     </Grid> 

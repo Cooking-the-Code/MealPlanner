@@ -1,14 +1,12 @@
 import React from 'react';
-import { Container, Grid, Paper } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import CTAButton from '../components/CTAButton';
 import Navbar from '../components/Navbar';
 import { H1Text, H2Text, H3Text } from  '../components/HeaderText';
 import HeroImage from '../components/HeroImage';
 
 
-
 export default function Hero() {
-    
     
         return (
             // Container for Landing Section
@@ -16,20 +14,15 @@ export default function Hero() {
             <Container 
                 maxWidth={false} 
                 style={{height: '100vh', margin:'0', padding: '0'}}
-                 >
-                <Navbar 
-                    style={{position: 'absolute', zIndex: '1000'}}
-                />
-                <HeroImage >
-                <Paper >
-                
+            >
+            <div className='navbar'>
+                    <Navbar />
+                </div>
+                <div className='img-wrapper'>
+                    <HeroImage />
+                </div>
+                <div className='text-wrapper'>
             {/* Grid Container for Power Statements & CTA Button */}
-                    <Grid 
-                        container direction='column' 
-                        spacing={0} 
-                        alignItems='center' 
-                        justify='space-evenly'
-                        style={{position: 'absolute', zIndex: '1000'}}>
                         
                         <H1Text />
                         <H2Text />
@@ -38,9 +31,7 @@ export default function Hero() {
                         <Grid item xs={12} >
                             <CTAButton />
                         </Grid>
-                    </Grid> 
-                    </Paper>   
-                    </HeroImage> 
+                </div>
             </Container> 
             
         );

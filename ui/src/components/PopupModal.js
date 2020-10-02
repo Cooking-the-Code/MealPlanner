@@ -12,6 +12,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import PopupForm from "./PopupForm";
+import OauthMenu from "./OauthMenu";
+import Divider from "@material-ui/core/Divider";
 
 const styles = (theme) => ({
   root: {
@@ -62,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     height: "70vh",
   },
   image: {
-    backgroundImage: "url(https://source.unsplash.com/random)",
+    backgroundImage: "url(https://source.unsplash.com/featured?food)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -98,11 +100,11 @@ export default function PopupModal() {
         fullWidth={true}
         maxWidth={"md"} // 'sm' || 'md' || 'lg' || 'xl'
         onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
+        aria-labelledby="Sign Up / Sign In form"
         open={open}
       >
         <DialogTitle
-          id="customized-dialog-title"
+          id="Sign Up/Sign In Form"
           onClose={handleClose}
         ></DialogTitle>
         <DialogContent>
@@ -111,6 +113,10 @@ export default function PopupModal() {
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
             <Grid item xs={12} sm={8} md={5} elevation={6} square="true">
               <PopupForm />
+              <br />
+              <Divider variant="middle" />
+              <br />
+              <OauthMenu />
             </Grid>
           </Grid>
         </DialogContent>

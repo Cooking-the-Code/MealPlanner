@@ -7,7 +7,7 @@ export default function SRButton() {
     return (
         <Button 
             variant='contained' 
-            style={{backgroundColor: '#fac70b', color: '#21174a', fontSize: '1.2rem'}} >
+            style={{backgroundColor: '#fac70b', color: '#21174a', fontSize: '1.2rem', fontFamily: 'Open Sans'}} >
             Register / Login
         </Button>
     )      

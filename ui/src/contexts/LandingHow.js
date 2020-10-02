@@ -8,7 +8,10 @@ export default function How() {
       <div>
         <Container maxWidth={false} style={{margin:'0', padding: '0'}}>
         <H4Text/>
-          <Grid container direction='row' spacing={2} style={{padding: '5vh', backgroundColor: '#df0e62',border:'5px solid black'}}>
+          <Grid container direction='row' spacing={2} style={{
+            padding: '10vh',
+          // border:'5px solid black'
+          }}>
             
             <HowCard side={'left'}/>
             <HowCard side={'right'}/>

@@ -18,10 +18,12 @@ const useStyles = makeStyles((theme) => ({
         // padding: '6rem',
         zIndex: 1,
         fontFamily: [
-            'Dancing Script',
-            'Open Sans'
+            'Dancing Script'
         ],
-        fontWeight: '400'
+        fontWeight: '400',
+        color: '#21174a',
+        padding: '10vh',
+        fontSize: '5rem'
     },
   }));
 
@@ -34,11 +36,27 @@ function H4Text() {
                 variant='h3' 
                 component='h3'
                 className={classes.typography} 
-                style={{padding: '10vh', color: '#df0e62', fontFamily: 'Open Sans'}}  >
+            >
                 How It Works!
             </Typography>
         // </Grid> 
     )
 }
 
-export { H4Text }
+function H5Text() {
+    const classes = useStyles();
+
+    return (
+        // <Grid item xs={12} style={{padding: '0'}}>
+            <Typography 
+                variant='h3' 
+                component='h3'
+                className={classes.typography} 
+            >
+                What people are saying...
+            </Typography>
+        // </Grid> 
+    )
+}
+
+export { H4Text, H5Text }

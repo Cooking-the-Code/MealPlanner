@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
     typography: {
         textAlign: 'center',
-        padding: '6rem',
+        padding: '2rem',
         zIndex: 1,
         fontFamily: [
             'Dancing Script',
@@ -33,8 +33,8 @@ function H1Text() {
             variant="h2" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#df0e62', fontFamily: 'Open Sans'}}  >
-            Sub Power statement
+            style={{color: '#21174a', fontFamily: 'Open Sans', paddingTop: '10rem'}}  >
+            Bringing your Love of Cooking &
         </Typography>
     </Grid> 
     )
@@ -49,7 +49,7 @@ function H2Text() {
             variant="h1" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#21174a', fontSize: '10rem'}}  >
+            style={{color: '#21174a', fontSize: '12rem'}}  >
             Come to the Table
         </Typography>
     </Grid> 
@@ -65,8 +65,8 @@ function H3Text() {
             variant="h2" 
             component="h2"
             className={classes.typography} 
-            style={{color: '#df0e62', fontFamily: 'Open Sans'}}  >
-            Sub Power statement
+            style={{color: '#21174a', fontFamily: 'Open Sans'}}  >
+            Meal Planning together
         </Typography>
     </Grid> 
     )

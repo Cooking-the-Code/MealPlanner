@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const userSchema = new mongoose.Schema({
 	username: {
 		type: String,
-		require: true,
+		required: true,
 		unique: true,
 	},
 	firstName: {
@@ -15,13 +15,17 @@ const userSchema = new mongoose.Schema({
 	},
 	email: {
 		type: String,
-		require: true,
+		required: true,
 		unique: true,
 	},
 	password: {
 		type: String,
 		require: true,
-	},
+  },
+  validated: {
+    type: Boolean,
+    default: false
+  },
 	recipes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'recipe' }],
 });
 

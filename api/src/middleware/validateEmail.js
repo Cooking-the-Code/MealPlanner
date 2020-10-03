@@ -1,4 +1,6 @@
 const nodemailer = require('nodemailer');
+const UI_URL = 'https://localhost:3050' || process.env.UI_URL;
+const User = require('../User.model.js');
 
 const sendEmail = (userEmail, username) => {
   // Set STMP gmail service
@@ -17,22 +19,24 @@ const sendEmail = (userEmail, username) => {
     html:`<h2>Thanks for signing up, ${username}</h2>
           <p>Please verify your email address to start planning your meals today. Thank you!</p>
           <br/>
-          <a href='https://google.com/?email=${userEmail}'/>Verify Email Now</a>
-          `
-  }
+          <a href='${UI_URL}/?email=${userEmail}'/>Verify Email Now</a>`
+  };
 
-  // Return sendEmail as promise
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-    console.log(error);
+      console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
     }
   });
 };
-
-const validateEmail = (user) => {
-
+// Returns updated as promize
+const validateEmail = (email) => {
+  return User
+  .findOneAndUpdate({
+    email
+  }, {validated: true}, {'new': true})
+    .exec();
 };
 
 module.exports = {

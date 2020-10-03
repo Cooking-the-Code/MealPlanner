@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
-import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
@@ -12,8 +11,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import PopupForm from "./PopupForm";
-// import OauthMenu from "./OauthMenu";
+import OauthMenu from "./OauthMenu";
 import Divider from "@material-ui/core/Divider";
+import DividerWithText from "./DividerWithText";
 
 const styles = (theme) => ({
   root: {
@@ -103,13 +103,14 @@ export default function PopupModal() {
         <DialogContent>
           <Grid container component="main" className={classes.root}>
             <CssBaseline />
-            <Grid item xs={false} sm={4} md={7} className={classes.image} />
+            <Grid item xs={3} sm={4} md={7} className={classes.image} />
             <Grid item xs={12} sm={8} md={5} elevation={6} square="true">
               <PopupForm />
               <br />
-              <Divider variant="middle" />
+
+              <DividerWithText>Or</DividerWithText>
               <br />
-              {/* <OauthMenu /> */}
+              <OauthMenu />
             </Grid>
           </Grid>
         </DialogContent>

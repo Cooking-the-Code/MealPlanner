@@ -1,11 +1,33 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
+import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+
+const SubmitButton = withStyles({
+  root: {
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    padding: "6px 12px",
+    border: "1px solid",
+    lineHeight: 1.5,
+    backgroundColor: "#21174a",
+    borderColor: "#21174a",
+    "&:hover": {
+      backgroundColor: "#f9a828",
+      borderColor: "#f9a828",
+      boxShadow: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "#f9a828",
+      borderColor: "#f9a828",
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
+    },
+  },
+})(Button);
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -41,6 +63,8 @@ export default function Login() {
             autoComplete="email"
             autoFocus
           />
+          <br />
+          <br />
           <TextField
             variant="outlined"
             margin="normal"
@@ -62,15 +86,15 @@ export default function Login() {
           </Grid>
 
           <Box textAlign="center">
-            <Button
+            <SubmitButton
               type="submit"
               variant="contained"
               color="primary"
-              size="large"
+              // disableRipple
               className={classes.submit}
             >
               Sign In
-            </Button>
+            </SubmitButton>
           </Box>
           <Grid justify="flex-end" container>
             <Grid item>

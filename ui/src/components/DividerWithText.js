@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   content: {
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(2),
     paddingLeft: theme.spacing(2),
     fontWeight: 300,

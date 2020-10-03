@@ -16,20 +16,7 @@ export default function How() {
     <div>
       <Container maxWidth={false} style={{margin:'0', padding: '0'}}>
         <H4Text/>
-<<<<<<< HEAD
-          <Grid container direction='row' spacing={2} style={{
-            padding: '10vh',
-            // border:'5px solid black'
-          }}>
-            
-            <HowCard side={'left'} text={howText1} image={'placeholder'}/>
-            <HowCard side={'right'} text={howText2} image={'placeholder'}/>
-            <HowCard side={'left'} text={howText3} image={'placeholder'}/>
-          </Grid>
-        </Container> 
-      </div>    
-      );
-=======
+
         <Grid container direction='row' spacing={2} style={{padding: '10vh'}}>            
           <HowCard side={'left'} text={howText1} image={'placeHolder'}/>
           <HowCard side={'right'} text={howText2} image={'placeHolder'}/>
@@ -38,5 +25,4 @@ export default function How() {
       </Container> 
     </div>    
     );
->>>>>>> e96a2d6dd5fd837f8c4a1dfe0b2b8b44bca680be
   }       

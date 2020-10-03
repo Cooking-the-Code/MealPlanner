@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Grid, Toolbar, Typography } from '@material-ui/core';
-import logo from '../assets/greenMealPlanIcon.svg';
+// import logo from '../assets/greenMealPlanIcon.svg';
 import SRButton from '../components/SignInButton';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,9 +29,7 @@ export default function Navbar() {
                         <Typography
                             varriant="h3"
                             component="h1"
-                            className={classes.typography} 
-                            
-                        >
+                            className={classes.typography}>
                             Come to the Table
                         </Typography>
                         

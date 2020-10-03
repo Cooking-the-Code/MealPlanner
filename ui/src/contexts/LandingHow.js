@@ -9,19 +9,15 @@ export default function How() {
   const howText3 = "Very well, but the hills are alive!!   Alive with the sound of Music!";  
   
   return (
-      <div>
-        <Container maxWidth={false} style={{margin:'0', padding: '0'}}>
+    <div>
+      <Container maxWidth={false} style={{margin:'0', padding: '0'}}>
         <H4Text/>
-          <Grid container direction='row' spacing={2} style={{
-            padding: '10vh',
-            // border:'5px solid black'
-          }}>
-            
-            <HowCard side={'left'} text={howText1} image={'placeHolder'}/>
-            <HowCard side={'right'} text={howText2} image={'placeHolder'}/>
-            <HowCard side={'left'} text={howText3} image={'placeHolder'}/>
-          </Grid>
-        </Container> 
-      </div>    
-      );
+        <Grid container direction='row' spacing={2} style={{padding: '10vh'}}>            
+          <HowCard side={'left'} text={howText1} image={'placeHolder'}/>
+          <HowCard side={'right'} text={howText2} image={'placeHolder'}/>
+          <HowCard side={'left'} text={howText3} image={'placeHolder'}/>
+        </Grid>
+      </Container> 
+    </div>    
+    );
   }       

@@ -7,12 +7,9 @@ import LandingFooter from  '../contexts/LandingFooter';
 
 
 class Landing extends Component {
-
-
-
     render() { 
         return (
-            <div style={{border:'5px solid black'}}>
+            <div>
                 <Hero />
                 <How />
                 <Testimonial />

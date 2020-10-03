@@ -16,40 +16,34 @@ const CardImage = () => {
     )
 }
 const CardText = (props) => {
-    const text = props.text;
+  const text = props.text;
 
-    return (
-        <Grid 
-            item xs={12} sm={6}
+  return (
+    <Grid item xs={12} sm={6} style={{ color: '#21174a', 
+        // border:'5px solid red',
+        // width: '30vw',
+        // height: '30vw'
+      }}>
+      <Grid container style={{ height: '30vw', 
+          // border:'5px solid yellow' 
+        }}
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center">
+        <Grid item>
+          <Typography 
+            variant="h3"  
             style={{
-                color: '#21174a', 
-                // border:'5px solid red',
-                // width: '30vw',
-                // height: '30vw'
-            }}>
-            <Grid container
-                style={{
-                    height: '30vw', 
-                    // border:'5px solid yellow' 
-                }}
-                spacing={0}
-                direction="column"
-                alignItems="center"
-                justify="center">
-
-                <Grid item>
-                    <Typography 
-                        variant="h3"  
-                        style={{
-                            textAlign: 'center', margin: 'auto', fontFamily: 'Open Sans',
-                            marginLeft: '5vh', marginRight: '5vh',  // marginTop: '25vh', 
-                        }}>              
-                        {text}  
-                    </Typography>
-                </Grid>
-            </Grid>
+              textAlign: 'center', margin: 'auto', fontFamily: 'Open Sans',
+              marginLeft: '5vh', marginRight: '5vh',  // marginTop: '25vh', 
+            }}>              
+            {text}  
+          </Typography>
         </Grid>
-    )
+      </Grid>
+    </Grid>
+  )
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -62,57 +56,51 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 1,
         position: 'absolute',
     }, */
-    typography: {
-        textAlign: 'center',
-        zIndex: 1,
-        fontFamily: [
-            'Dancing Script',
-            'Open Sans'
-        ],
-        fontWeight: '200'
-    },
+  typography: {
+    textAlign: 'center',
+    zIndex: 1,
+    fontFamily: [
+        'Dancing Script',
+        'Open Sans'
+    ],
+    fontWeight: '200'
+  },
 }));
 
 export default function HowCard(props) {
     const side = props.side;
     const text = props.text;
-    const classes = useStyles();
+    // const classes = useStyles();
 
     if(side === 'left'){
-        return (
-            <Grid 
-                item xs={12} 
-                style={{
-                    margin: '2vh', 
-                    border:'5px dotted black'
-                    }}>
-                <Grid 
-                    container direction='row' 
-                    spacing={10} 
-                    style={{border:'5px solid black'}}
-                    >
-                    <CardImage />
-                    <CardText text={text}/>
-                </Grid>                
-            </Grid>
-        )
+      return (
+        <Grid 
+          item xs={12} 
+          style={{border:'5px dotted black',
+            margin: '2vh' }}>
+          <Grid 
+            style={{border:'5px solid black'}}
+            container direction='row' 
+            spacing={2}>
+            <CardImage />
+            <CardText text={text}/>
+          </Grid>                
+        </Grid>
+      )
     } else if(side === 'right'){
-        return (
-            <Grid 
-                item xs={12} 
-                style={{
-                    margin: '2vh', 
-                    border:'5px solid blue'
-                    }}>
-                <Grid 
-                    container direction='row-reverse' 
-                    spacing={10} 
-                    style={{border:'5px solid black'}}
-                    >
-                    <CardImage />
-                    <CardText text={text}/>
-                </Grid>
-            </Grid>
-        )
+      return (
+        <Grid 
+          item xs={12} 
+          style={{border:'5px dotted blue',
+            margin: '2vh' }}>
+          <Grid 
+            style={{border:'5px solid blue'}}
+            container direction='row-reverse' 
+            spacing={2}>
+            <CardImage />
+            <CardText text={text}/>
+          </Grid>
+        </Grid>
+      )
     }
 }

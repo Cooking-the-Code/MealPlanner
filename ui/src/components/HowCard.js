@@ -2,39 +2,52 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const CardImage = () => {
     return(
         <Grid 
-            item xs={6} 
+            item xs={12} sm={6}
             style={{
                 color: '#df0e62', 
                 // border:'5px solid yellow', 
-                height: '40vw', 
-                width: '40vw'}}>
+                // width: '30vw',
+                height: '40vw'}}>
             <div className='howImg'/> 
         </Grid>
     )
 }
-const CardText = () => {
+const CardText = (props) => {
+    const text = props.text;
+
     return (
         <Grid 
-            item xs={6} 
+            item xs={12} sm={6}
             style={{
                 color: '#21174a', 
-                // border:'5px solid red', 
-                height: '40vw', 
-                width: '40vw'}}>
-            <Typography 
-                variant="h3"  
+                // border:'5px solid red',
+                // width: '30vw',
+                // height: '30vw'
+            }}>
+            <Grid container
                 style={{
-                    textAlign: 'center', margin: 'auto', 
-                    marginLeft: '5vh', marginRight: '5vh', marginTop: '25vh', fontFamily: 'Open Sans', }}>
-                Chitty Bang Bang, Chitty Chitty Bang Bang
-                We love you and in
-                Chitty Chitty Bang Bang, Chitty Chitty Bang Bang
-                What we'll do?
-            </Typography>
+                    height: '30vw', 
+                    // border:'5px solid yellow' 
+                }}
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center">
+
+                <Grid item>
+                    <Typography 
+                        variant="h3"  
+                        style={{
+                            textAlign: 'center', margin: 'auto', fontFamily: 'Open Sans',
+                            marginLeft: '5vh', marginRight: '5vh',  // marginTop: '25vh', 
+                        }}>              
+                        {text}  
+                    </Typography>
+                </Grid>
+            </Grid>
         </Grid>
     )
 }
@@ -62,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HowCard(props) {
     const side = props.side;
+    const text = props.text;
     const classes = useStyles();
-
 
     if(side === 'left'){
         return (
@@ -71,15 +84,15 @@ export default function HowCard(props) {
                 item xs={12} 
                 style={{
                     margin: '2vh', 
-                    // border:'5px solid black'
+                    border:'5px dotted black'
                     }}>
                 <Grid 
                     container direction='row' 
-                    spacing={0} 
-                    // style={{border:'5px solid black'}}
+                    spacing={10} 
+                    style={{border:'5px solid black'}}
                     >
                     <CardImage />
-                    <CardText />
+                    <CardText text={text}/>
                 </Grid>                
             </Grid>
         )
@@ -89,15 +102,15 @@ export default function HowCard(props) {
                 item xs={12} 
                 style={{
                     margin: '2vh', 
-                    // border:'5px solid blue'
+                    border:'5px solid blue'
                     }}>
                 <Grid 
-                    container direction='row' 
-                    spacing={0} 
-                    // style={{border:'5px solid black'}}
+                    container direction='row-reverse' 
+                    spacing={10} 
+                    style={{border:'5px solid black'}}
                     >
-                    <CardText />
                     <CardImage />
+                    <CardText text={text}/>
                 </Grid>
             </Grid>
         )

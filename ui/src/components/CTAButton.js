@@ -8,7 +8,7 @@ export default function CTAButton() {
         <Button 
             color='primary' 
             variant='contained' 
-            style={{background: '#fac70b', color: '#21174a', fontSize: '1.6rem', fontFamily: 'Open Sans'}}>
+            style={{background: '#f9a828', color: '#09012a', fontSize: '1.6rem', fontFamily: 'Open Sans', fontWeight: '500'}}>
             Join Now
         </Button>
     )

@@ -4,12 +4,13 @@
 
 .text-wrapper {
     position: absolute;
-      top: 10rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding-left: 23vw;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    //height: 100vh;
+    //width: 100%;
+    text-align: center;
+    // border:5px dotted black;
+    z-index: 1000;
+    overflow: hidden;
 }

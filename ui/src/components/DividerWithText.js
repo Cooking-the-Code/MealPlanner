@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   border: {
+    marginLeft: theme.spacing(1),
     borderBottom: "2px solid #21174a",
     width: "100%",
   },

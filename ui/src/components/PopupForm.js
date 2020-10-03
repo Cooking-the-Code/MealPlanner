@@ -10,9 +10,6 @@ import Login from "./Login";
 import SignUp from "./Signup";
 
 const ColorTabs = withStyles({
-  // root: {
-  //   borderBottom: "1px solid #e8e8e8",
-  // },
   indicator: {
     backgroundColor: "#21174a",
   },
@@ -21,9 +18,9 @@ const ColorTabs = withStyles({
 const ColorTab = withStyles((theme) => ({
   root: {
     textTransform: "none",
-    minWidth: 72,
-    fontWeight: theme.typography.fontWeightRegular,
-    marginRight: theme.spacing(4),
+    fontWeight: 200,
+    fontSize: 18,
+    marginLeft: theme.spacing(1),
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",

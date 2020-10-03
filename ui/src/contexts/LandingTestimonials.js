@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Typography } from '@material-ui/core';
 import { H5Text } from '../components/Headers';
-import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel';
+// import { AutoRotatingCarousel, Slide } from 'material-auto-rotating-carousel';
 
 export default function Testimonial() {
-  const { red, blue, green } = require('@material-ui/core/colors');
+  // const { red, blue, green } = require('@material-ui/core/colors');
 
   return (
     <div>

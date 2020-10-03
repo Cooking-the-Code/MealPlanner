@@ -1,13 +1,22 @@
 import React from 'react';
-import { Container, Typography } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
+import HowCard from '../components/HowCard';
+import { H4Text }from '../components/Headers';
 
 export default function How() {
   return (
       <div>
-        <Container maxWidth='false' style={{margin:"0", padding: "0", border:'5px solid yellow'}}>
-          <Typography component="div" style={{backgroundColor: '#df0e62', height: '70vh'}}>
-          
-          </Typography>
+        <Container maxWidth={false} style={{margin:'0', padding: '0'}}>
+        <H4Text/>
+          <Grid container direction='row' spacing={2} style={{
+            padding: '10vh',
+          // border:'5px solid black'
+          }}>
+            
+            <HowCard side={'left'}/>
+            <HowCard side={'right'}/>
+            <HowCard side={'left'}/>
+          </Grid>
         </Container> 
       </div>    
       );

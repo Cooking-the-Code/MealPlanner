@@ -98,7 +98,7 @@ export default function Login() {
 
           <Grid justify="flex-end" container>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2" color="inherit">
                 Forgot password?
               </Link>
             </Grid>
@@ -114,13 +114,6 @@ export default function Login() {
               Sign In
             </SubmitButton>
           </Box>
-          <Grid justify="flex-end" container>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
     </Container>

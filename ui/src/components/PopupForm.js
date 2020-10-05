@@ -56,7 +56,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
+      aria-labelledby={`popup sign up / sign in nav${index}`}
       {...other}
     >
       {value === index && <Box>{children}</Box>}

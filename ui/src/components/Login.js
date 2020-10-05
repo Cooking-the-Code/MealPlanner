@@ -3,6 +3,25 @@ import Button from "@material-ui/core/Button";
 import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
+const CssTextField = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "#21174a",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "gray",
+      },
+      "&:hover fieldset": {
+        borderColor: "#21174a",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#21174a",
+      },
+    },
+  },
+})(TextField);
+
 const SubmitButton = withStyles({
   root: {
     boxShadow: "none",
@@ -52,20 +71,20 @@ export default function Login() {
     <Container maxWidth="xs">
       <div className={classes.paper}>
         <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
+          <CssTextField
             fullWidth
-            id="email"
+            required
             label="Email Address"
+            variant="outlined"
+            id="email"
             name="email"
             autoComplete="email"
             autoFocus
           />
           <br />
           <br />
-          <TextField
+          <br />
+          <CssTextField
             variant="outlined"
             margin="normal"
             required
@@ -90,7 +109,6 @@ export default function Login() {
               type="submit"
               variant="contained"
               color="primary"
-              // disableRipple
               className={classes.submit}
             >
               Sign In

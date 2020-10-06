@@ -53,4 +53,17 @@ function H5Text() {
   )
 }
 
-export { H4Text, H5Text }
+function H6Text() {
+  const classes = useStyles();
+
+  return (
+    <Typography 
+      variant='h4' 
+      component='h5'
+      className={classes.typography} style={{color:'#f9a828', fontSize: '3.3rem', padding: '2rem'}}>
+      How can we help?
+    </Typography>
+  )
+}
+
+export { H4Text, H5Text, H6Text }

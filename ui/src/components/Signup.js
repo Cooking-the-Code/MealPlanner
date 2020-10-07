@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-
+import React from "react";
 import Button from "@material-ui/core/Button";
-import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
+import { TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {
       color: "#21174a",
+      fontSize: "16px",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
@@ -15,9 +15,11 @@ const CssTextField = withStyles({
       },
       "&:hover fieldset": {
         borderColor: "#21174a",
+        fontSize: "18px",
       },
       "&.Mui-focused fieldset": {
         borderColor: "#21174a",
+        fontSize: "18px",
       },
     },
   },
@@ -28,11 +30,12 @@ const SubmitButton = withStyles({
     boxShadow: "none",
     textTransform: "none",
     fontSize: 16,
+    color: "#21174a",
     padding: "6px 12px",
     border: "1px solid",
     lineHeight: 1.5,
-    backgroundColor: "#21174a",
-    borderColor: "#21174a",
+    backgroundColor: "#f9a828",
+    borderColor: "#f9a828",
     "&:hover": {
       backgroundColor: "#f9a828",
       borderColor: "#f9a828",
@@ -41,10 +44,6 @@ const SubmitButton = withStyles({
     "&:active": {
       boxShadow: "none",
       backgroundColor: "#f9a828",
-      borderColor: "#f9a828",
-    },
-    "&:focus": {
-      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
     },
   },
 })(Button);

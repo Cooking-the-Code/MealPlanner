@@ -7,9 +7,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import logo from "../assets/greenMealPlanIcon.svg";
-import familyTable from "../assets/familyTable.jpg";
 import PopupModal from "../components/PopupModal";
 
 class Hero extends Component {

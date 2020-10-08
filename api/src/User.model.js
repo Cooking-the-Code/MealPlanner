@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-	username: {
+	/* username: {
 		type: String,
 		required: true,
 		unique: true,
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
 	},
 	lastName: {
 		type: String,
-	},
+	}, */
 	email: {
 		type: String,
 		required: true,

@@ -1,61 +1,121 @@
-import React, { Component } from 'react';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-class Login extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			username: '',
-			password: '',
-			passwordConfirm: '',
-			valid: true,
-			submit: false,
-		};
-	}
-	handleChange = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
-	};
-	checkPassword = (event) => {
-		event.preventDefault();
-		this.state.password === this.state.passwordConfirm
-			? this.setState({ valid: true, submit: true })
-			: this.setState({ valid: false, submit: true });
-	};
+const CssTextField = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "#21174a",
+      fontSize: "16px",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "gray",
+      },
+      "&:hover fieldset": {
+        borderColor: "#21174a",
+        fontSize: "18px",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#21174a",
+        fontSize: "18px",
+      },
+    },
+  },
+})(TextField);
 
-	render() {
-		return (
-			<div className='form'>
-				<h1>Sign In</h1>
-				<form onSubmit={this.checkPassword}>
-					<input
-						type='text'
-						placeholder='Username'
-						id='username'
-						name='username'
-						value={this.state.username}
-						onChange={this.handleChange}
-					/>
-					<label htmlFor='username'>Username</label>
+const SubmitButton = withStyles({
+  root: {
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    color: "#21174a",
+    padding: "6px 12px",
+    border: "1px solid",
+    lineHeight: 1.5,
+    backgroundColor: "#f9a828",
+    borderColor: "#f9a828",
+    "&:hover": {
+      backgroundColor: "#f9a828",
+      borderColor: "#f9a828",
+      boxShadow: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "#f9a828",
+    },
+  },
+})(Button);
 
-					<input
-						type='password'
-						placeholder='Password'
-						id='password'
-						name='password'
-						value={this.state.password}
-						onChange={this.handleChange}
-					/>
-					<label htmlFor='password'>Password</label>
-					<button type='submit'>Login</button>
-					{this.state.submit && (
-						<p className={this.state.value ? 'valid' : 'invalid'}>
-							{this.state.valid ? 'password matched' : 'password do not match'}
-						</p>
-					)}
-					{!this.state.submit}
-				</form>
-			</div>
-		);
-	}
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(3),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  form: {
+    width: "90%",
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
+
+export default function Login() {
+  const classes = useStyles();
+
+  return (
+    <Container maxWidth="xs">
+      <div className={classes.paper}>
+        <form className={classes.form} noValidate>
+          <CssTextField
+            fullWidth
+            required
+            label="Email Address"
+            variant="outlined"
+            id="email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <br />
+          <br />
+          <br />
+          <CssTextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+
+          <Grid justify="flex-end" container>
+            <Grid item>
+              <Link href="#" variant="body2" color="inherit">
+                Forgot password?
+              </Link>
+            </Grid>
+          </Grid>
+
+          <Box textAlign="center">
+            <SubmitButton
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </SubmitButton>
+          </Box>
+        </form>
+      </div>
+    </Container>
+  );
 }
-
-export default Login;

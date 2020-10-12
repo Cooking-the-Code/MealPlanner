@@ -2,17 +2,6 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-	/* username: {
-		type: String,
-		required: true,
-		unique: true,
-	},
-	firstName: {
-		type: String,
-	},
-	lastName: {
-		type: String,
-	}, */
 	email: {
 		type: String,
 		required: true,
@@ -26,7 +15,9 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-	recipes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'recipe' }],
+  recipes: [
+    { type: mongoose.Schema.Types.ObjectId, ref: "recipe", default: [] },
+  ],
 });
 
 //pre save hook for hashing the password before saving it to the database

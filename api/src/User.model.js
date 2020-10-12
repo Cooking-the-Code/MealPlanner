@@ -2,26 +2,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-  // username: {
-  //   type: String,
-  //   require: true,
-  //   unique: true,
-  // },
-  // firstName: {
-  //   type: String,
-  //   require: true,
-  // },
-  // lastName: {
-  //   type: String,
-  //   require: true,
-  // },
-  email: {
-    type: String,
-    require: true,
-    unique: true,
+	email: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	password: {
+		type: String,
+		require: true,
   },
-  password: {
-    type: String,
+  validated: {
+    type: Boolean,
+    default: false
   },
   recipes: [
     { type: mongoose.Schema.Types.ObjectId, ref: "recipe", default: [] },

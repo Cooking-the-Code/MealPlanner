@@ -12,7 +12,7 @@ services:
     build: 
       # file name to use
       dockerfile: Dockerfile.dev
-      # which directory to find the above file in
+      # which directory to find the abdocove file in
       context: ./api
     volumes: 
       - /app/node_modules

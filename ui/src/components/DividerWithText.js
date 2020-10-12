@@ -8,17 +8,17 @@ const useStyles = makeStyles((theme) => ({
   },
   border: {
     marginLeft: theme.spacing(1),
-    borderBottom: "2px solid #21174a",
+    borderBottom: ".2rem solid #21174a",
     width: "100%",
   },
   content: {
-    paddingTop: theme.spacing(6),
+    paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     paddingRight: theme.spacing(2),
     paddingLeft: theme.spacing(2),
     fontWeight: 300,
     fontSize: 18,
-    color: "#21174a",
+    color: "red",
   },
 }));
 

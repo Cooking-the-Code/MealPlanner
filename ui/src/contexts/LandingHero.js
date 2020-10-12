@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import CTAButton from '../components/CTAButton';
@@ -39,7 +38,7 @@ export default function Hero() {
     
     
     
-=======
+/*
 import React, { Component } from "react";
 import {
   AppBar,
@@ -63,14 +62,14 @@ class Hero extends Component {
             <Toolbar>
               <Grid container justify="space-between" alignItems="center">
                 <img src={logo} className="App-logo" alt="awesome-cool-logo" />
-                {/* Popup Modal for sign in and sign up */}
-                <PopupModal />
+                {/* Popup Modal for sign in and sign up } */
+               /* <PopupModal />
               </Grid>
             </Toolbar>
           </AppBar>
           <Container>
-            {/* <img src={familyTable} style={{width: '125wh', height: '90vh'}}/> */}
-            <Typography
+            {/* <img src={familyTable} style={{width: '125wh', height: '90vh'}}/> }*/
+            /*<Typography
               component="div"
               style={{
                 color: "#84253e",
@@ -126,4 +125,4 @@ class Hero extends Component {
 }
 
 export default Hero;
->>>>>>> signin
+*/

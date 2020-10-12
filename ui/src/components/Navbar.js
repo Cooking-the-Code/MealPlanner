@@ -3,7 +3,7 @@ import { AppBar, Grid, Toolbar, Typography } from '@material-ui/core';
 import logo from '../assets/greenMealPlanIcon.svg';
 import SRButton from '../components/SignInButton';
 import { makeStyles } from '@material-ui/core/styles';
-
+import PopupModal from "../components/PopupModal";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,10 +33,10 @@ export default function Navbar() {
                         >
                             Come to the Table
                         </Typography>
-                        
-            
+                       
+                       <PopupModal />
                         {/* <img src={logo} className='App-logo' alt='awesome-cool-logo' /> */}
-                        <SRButton /> 
+                        {/* <SRButton />  */}
                     </Grid>
                 </Toolbar>
             </AppBar>

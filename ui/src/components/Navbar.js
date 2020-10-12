@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Grid, Toolbar, Typography } from '@material-ui/core';
-import logo from '../assets/greenMealPlanIcon.svg';
+// import logo from '../assets/greenMealPlanIcon.svg';
 import SRButton from '../components/SignInButton';
 import { makeStyles } from '@material-ui/core/styles';
 import PopupModal from "../components/PopupModal";
@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
             'Dancing Script'
         ],
         fontWeight: '400',
-        fontSize: '3rem'
+        fontSize: '3rem',
+        color: '#f9a828'
     },
   }));
 
@@ -22,15 +23,13 @@ export default function Navbar() {
 
     return (
         <div className='navbar'>
-            <AppBar position='static' style={{backgroundColor: '#21174a' }}>
+            <AppBar position='static' style={{backgroundColor: '#09012a' }}>
                 <Toolbar >
                     <Grid container justify='space-between' alignItems='center'>
                         <Typography
                             varriant="h3"
                             component="h1"
-                            className={classes.typography} 
-                            
-                        >
+                            className={classes.typography}>
                             Come to the Table
                         </Typography>
                        

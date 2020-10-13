@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
+import axios from 'axios';
 import { TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+const apiUrl = `http://localhost:5000`;
 
 const CssTextField = withStyles({
   root: {
@@ -67,10 +69,29 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // SignUp data
+
+  const signUp = (event) => {
+    event.preventDefault();
+    axios.post(apiUrl + '/api/user/signup', {
+      email,
+      password
+    },
+    {"Access-Control-Allow-Origin": "*"}
+    ).then(data=>{
+      // TODO: User is signed up, check
+    })
+    .catch(err=>{
+      //TODO:User already exists
+      console.error(err);
+    });
+  }
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={event=>signUp(event)}>
           <CssTextField
             fullWidth
             required
@@ -80,6 +101,8 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
           />
           <br />
           <br />
@@ -94,6 +117,8 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           />
 
           <Box textAlign="center">

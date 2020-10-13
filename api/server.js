@@ -1,5 +1,5 @@
 const express = require("express");
-// const cors = require('cors');
+const cors = require('cors');
 const connectDb = require("./src/connection");
 const User = require("./src/User.model.js");
 
@@ -16,7 +16,7 @@ const PORT = 5000;
 //middleware
 app.use(express.json());
 
-// app.use(cors());
+app.use(cors());
 
 //routes middleware
 app.use('/api/user', authRoutes);

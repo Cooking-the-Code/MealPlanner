@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
 import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import axios from 'axios';
 
 const CssTextField = withStyles({
   root: {
@@ -66,11 +67,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:5000/api/user/signin',
+    {email, password})
+    .then(token=> {
+      //TODO: Pass token to the user, user will
+      // local.setStorage(token);
+    })
+    .catch(err=> {
+      //Todo: Error
+    })
+  }
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={e => onSubmit(e)}>
           <CssTextField
             fullWidth
             required
@@ -80,6 +95,8 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
           <br />
           <br />
@@ -94,6 +111,8 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={ e => setPassword(e.target.value)}
           />
 
           <Grid justify="flex-end" container>

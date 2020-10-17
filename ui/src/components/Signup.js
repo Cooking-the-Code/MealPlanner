@@ -81,7 +81,7 @@ export default function Login() {
     },
     {"Access-Control-Allow-Origin": "*"}
     ).then(data=>{
-      // TODO: User is signed up, check
+      // TODO: User is signed up, display on modal that user needs to validate
     })
     .catch(err=>{
       //TODO:User already exists

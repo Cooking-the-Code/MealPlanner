@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
 import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import axios from 'axios';
 
+const API_URL = process.env.API_URL || 'http://localhost:5000';
+const UI_URL = process.env.UI_URL || 'http://localhost:3050';
 const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {
@@ -66,11 +69,30 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post(`${API_URL}/api/user/signin`,
+    {email, password})
+    .then(({data:{token}})=> {
+      console.log(token)
+      //Pass token onto localStorage on web browser
+      localStorage.setItem('userJWT', token);
+      //Change url to dashboard url
+      window.location.replace(`${UI_URL}/dashboard`);
+    })
+    .catch(err=> {
+      //Todo: Either the user doesn't exist or credentials are wrong
+      console.error(err);
+    });
+  }
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={e => onSubmit(e)}>
           <CssTextField
             fullWidth
             required
@@ -80,6 +102,8 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
           <br />
           <br />
@@ -94,6 +118,8 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={ e => setPassword(e.target.value)}
           />
 
           <Grid justify="flex-end" container>

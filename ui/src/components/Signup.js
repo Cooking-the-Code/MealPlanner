@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@material-ui/core/Button";
+import axios from 'axios';
 import { TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+const apiUrl = `http://localhost:5000`;
 
 const CssTextField = withStyles({
   root: {
@@ -67,10 +69,30 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [needsValidation, setNeedsValidation] = useState(false);
+  // SignUp data
+  const signUp = (event) => {
+    event.preventDefault();
+    axios.post(apiUrl + '/api/user/signup', {
+      email,
+      password
+    },
+    {"Access-Control-Allow-Origin": "*"}
+    ).then(data=>{
+      // TODO: User is signed up, display on modal that user needs to validate
+      setNeedsValidation(true);
+    })
+    .catch(err=>{
+      //TODO:User already exists, show on front end
+      console.error(err);
+    });
+  }
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={event=>signUp(event)}>
           <CssTextField
             fullWidth
             required
@@ -80,6 +102,8 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
           />
           <br />
           <br />
@@ -94,9 +118,12 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           />
 
           <Box textAlign="center">
+          {needsValidation ? <h1 style={{color:'#3f51b5'}}>Check your email to verify</h1> : null}
             <SubmitButton
               type="submit"
               variant="contained"
@@ -105,6 +132,8 @@ export default function Login() {
             >
               Sign Up
             </SubmitButton>
+
+            {}
             {/* Link to terms to service agreements */}
             <p>
               By signing up, you are agreeing with Come To The Table's Terms and

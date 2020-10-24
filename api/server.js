@@ -2,7 +2,10 @@ const express = require("express");
 const cors = require('cors');
 const connectDb = require("./src/connection");
 const User = require("./src/User.model.js");
-
+const axios = require('axios');
+const API_URL = process.env.API_URL || 'http://localhost:5000';
+const UI_URL = process.env.UI_URL || 'http://localhost:3050';
+require('dotenv').config();
 // const { ExtractJwt } = require("passport-jwt");
 
 
@@ -25,6 +28,18 @@ app.use('/api/user', authRoutes);
 app.get("/", async (req, res) => {
   res.send("Welcome to the Kitchen \n");
 });
+
+app.get('/verify',(req, res, next) =>{
+  axios.put(`${API_URL}/api/user/validate/${req.query.email}`)
+    .then((data)=>{
+      console.log(data);
+      res.status(200);
+      res.redirect(`${UI_URL}`);
+    })
+    .catch((err)=> {
+      next(err);
+    })
+})
 
 app.post('/api', async (req, res) => {
 	res.json({message: 'Post created'});

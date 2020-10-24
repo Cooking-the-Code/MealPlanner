@@ -8,7 +8,7 @@ import { Grid } from '@material-ui/core';
 
 
 class Landing extends Component {
-    render() { 
+    render() {
         return (
             <div>
                 <Hero />

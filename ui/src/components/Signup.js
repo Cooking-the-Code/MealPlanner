@@ -71,8 +71,8 @@ export default function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [needsValidation, setNeedsValidation] = useState(false);
   // SignUp data
-
   const signUp = (event) => {
     event.preventDefault();
     axios.post(apiUrl + '/api/user/signup', {
@@ -82,9 +82,10 @@ export default function Login() {
     {"Access-Control-Allow-Origin": "*"}
     ).then(data=>{
       // TODO: User is signed up, display on modal that user needs to validate
+      setNeedsValidation(true);
     })
     .catch(err=>{
-      //TODO:User already exists
+      //TODO:User already exists, show on front end
       console.error(err);
     });
   }
@@ -122,6 +123,7 @@ export default function Login() {
           />
 
           <Box textAlign="center">
+          {needsValidation ? <h1 style={{color:'#3f51b5'}}>Check your email to verify</h1> : null}
             <SubmitButton
               type="submit"
               variant="contained"
@@ -130,6 +132,8 @@ export default function Login() {
             >
               Sign Up
             </SubmitButton>
+
+            {}
             {/* Link to terms to service agreements */}
             <p>
               By signing up, you are agreeing with Come To The Table's Terms and

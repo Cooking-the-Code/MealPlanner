@@ -4,6 +4,8 @@ import { Link, Grid, TextField, Container, Box } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import axios from 'axios';
 
+const API_URL = process.env.API_URL || 'http://localhost:5000';
+const UI_URL = process.env.UI_URL || 'http://localhost:3050';
 const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {
@@ -72,15 +74,20 @@ export default function Login() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/user/signin',
+
+    axios.post(`${API_URL}/api/user/signin`,
     {email, password})
-    .then(token=> {
-      //TODO: Pass token to the user, user will
-      // local.setStorage(token);
+    .then(({data:{token}})=> {
+      console.log(token)
+      //Pass token onto localStorage on web browser
+      localStorage.setItem('userJWT', token);
+      //Change url to dashboard url
+      window.location.replace(`${UI_URL}/dashboard`);
     })
     .catch(err=> {
-      //Todo: Error
-    })
+      //Todo: Either the user doesn't exist or credentials are wrong
+      console.error(err);
+    });
   }
   return (
     <Container maxWidth="xs">

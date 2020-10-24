@@ -13,25 +13,30 @@ router.post('/signup', async (req, res, next) => {
 		// console.log('req.body:', req.body);
 		const password = await bcrypt.hash(req.body.password, 10);
 		const user = await User.create({
-			username:req.body.username, // Is username necessary?
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			email: req.body.email,
 			password,
 		});
 		//Sends an email
-		sendEmail(user.email, user.username);
+		sendEmail(user.email);
 		res.status(201).json(user);
 	} catch (error) {
 		return next(error);
 	}
 });
 
+//Sends json token - NEEDS TO BE DECODED on FRONT END &
 router.post('/signin', (req, res, next) => {
 	User.findOne({ email: req.body.email })
-		.then((user) => createUserToken(req, user))
+		.then((user) => {
+			if(user.validated) return createUserToken(req, user);
+			const err = new Error('The provided user is not validated.');
+			err.statusCode = 403;
+			throw err;
+		})
 		.then((token) => res.json({ token }))
-		.catch(next);
+		.catch(err=>next(err));
 });
 
 // Validates email
